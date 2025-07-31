@@ -1,0 +1,14 @@
+name: "CI Pipeline"
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: windows
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Tests
+        run: npm test
